@@ -1,0 +1,55 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile and run",
+      "type": "shell",
+      "command": "",
+      "args": [
+        "cp",
+        "${file}",
+        "${workspaceFolder}/program.cpp",
+        "&&",
+        "g++",
+        "program.cpp",
+        "-o",
+        "program",
+        "&&",
+        "./program",
+        "<",
+        "input.txt",
+        ">",
+        "output.txt",
+        "&&",
+        "rm",
+        "program",
+        "&&",
+        "rm",
+        "program.cpp"
+      ],
+      "presentation": {
+        "reveal": "silent",
+		"panel": "shared",
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": [
+          "relative",
+          "${workspaceRoot}"
+        ],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      }
+    }
+  ]
+}
