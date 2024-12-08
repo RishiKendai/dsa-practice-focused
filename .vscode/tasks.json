@@ -6,34 +6,33 @@
       "type": "shell",
       "command": "",
       "args": [
-        "cp",
-        "${file}",
-        "${workspaceFolder}/program.cpp",
+        "copy",
+        "\"${file}\"",
+        "${workspaceFolder}\\program.cpp",
         "&&",
         "g++",
         "program.cpp",
         "-o",
         "program",
         "&&",
-        "./program",
+        "program",
         "<",
         "input.txt",
         ">",
         "output.txt",
         "&&",
-        "rm",
-        "program",
+        "del",
+        "program.exe",
         "&&",
-        "rm",
+        "del",
         "program.cpp"
       ],
       "presentation": {
-        "reveal": "silent",
-		"panel": "shared",
+        "reveal": "never"
       },
       "group": {
         "kind": "build",
-        "isDefault": true
+        "isDefault": true,
       },
       "problemMatcher": {
         "owner": "cpp",
